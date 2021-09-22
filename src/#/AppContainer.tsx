@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
-import { Navbar } from './@components';
+import { Navbar } from '../@components';
 
 // import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
 // import './App.css';
@@ -14,7 +14,7 @@ const App = () => (
         <Navbar />
       </Sider>
       <Layout>
-        <Header>Header</Header>
+        {/* <Header>Header</Header> */}
         <Content>Content</Content>
         <Footer>Footer</Footer>
       </Layout>
