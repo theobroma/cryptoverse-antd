@@ -9,6 +9,7 @@ import {
   FundOutlined,
   //   MenuOutlined,
 } from '@ant-design/icons';
+import { ROUTES } from '../../@types';
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -27,17 +28,17 @@ const Navbar: React.FC = () => {
         </Button> */}
       </div>
       <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
-        <Menu.Item icon={<HomeOutlined />} key="/">
-          <Link to="/">Home</Link>
+        <Menu.Item icon={<HomeOutlined />} key={ROUTES.ROOT}>
+          <Link to={ROUTES.ROOT}>Home</Link>
         </Menu.Item>
-        <Menu.Item icon={<FundOutlined />} key="/cryptocurrencies">
-          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+        <Menu.Item icon={<FundOutlined />} key={ROUTES.CRYPTOCURRENCIES}>
+          <Link to={ROUTES.CRYPTOCURRENCIES}>Cryptocurrencies</Link>
         </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />} key="/exchanges">
-          <Link to="/exchanges">Exchanges</Link>
+        <Menu.Item icon={<MoneyCollectOutlined />} key={ROUTES.EXCHANGES}>
+          <Link to={ROUTES.EXCHANGES}>Exchanges</Link>
         </Menu.Item>
-        <Menu.Item icon={<BulbOutlined />} key="/news">
-          <Link to="/news">News</Link>
+        <Menu.Item icon={<BulbOutlined />} key={ROUTES.NEWS}>
+          <Link to={ROUTES.NEWS}>News</Link>
         </Menu.Item>
       </Menu>
     </div>
