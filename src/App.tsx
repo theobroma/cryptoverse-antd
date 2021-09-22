@@ -9,8 +9,10 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const App = () => (
   <div className="app">
-    <Layout>
-      <Sider>Sider</Sider>
+    <Layout style={{ height: '100vh' }}>
+      <Sider width={300}>
+        <Navbar />
+      </Sider>
       <Layout>
         <Header>Header</Header>
         <Content>Content</Content>
