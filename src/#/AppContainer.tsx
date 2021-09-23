@@ -4,8 +4,7 @@ import { Layout } from 'antd';
 import { LoadingPage, Navbar } from '../@components';
 import { IRoute, ROUTES } from '../@types';
 
-// TODO: implement spinner(LoadingPage)
-const MIN_LAZY_DELAY = 30;
+const MIN_LAZY_DELAY = 100;
 
 const CryptoСurrenciesView = lazy(async () => {
   const [moduleExports] = await Promise.all([
