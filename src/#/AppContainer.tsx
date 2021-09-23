@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
-import { Layout, Typography, Space } from 'antd';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Layout } from 'antd';
 import { LoadingPage, Navbar } from '../@components';
 import { IRoute, ROUTES } from '../@types';
 
@@ -17,8 +17,7 @@ const CryptoСurrenciesView = lazy(async () => {
   return moduleExports;
 });
 
-// import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer, Sider } = Layout;
 
 export const APP_MAIN_ROUTES: IRoute[] = [
   // {
@@ -33,7 +32,7 @@ export const APP_MAIN_ROUTES: IRoute[] = [
   },
 ];
 
-const App = () => {
+const App: React.FC = () => {
   const sidebarWidth = 300;
   return (
     <div className="app">
@@ -51,7 +50,6 @@ const App = () => {
         </Sider>
         <Layout style={{ marginLeft: sidebarWidth }}>
           {/* <Header>Header</Header> */}
-          {/* ROUTES */}
           <Suspense fallback={<LoadingPage />}>
             <Switch>
               <Redirect from="/index.html" to="/" exact />
@@ -61,7 +59,6 @@ const App = () => {
               {/* <Route component={Page404View} /> */}
             </Switch>
           </Suspense>
-          {/* / ROUTES */}
           {/* <Content>Content</Content> */}
           <Footer>Footer</Footer>
         </Layout>
