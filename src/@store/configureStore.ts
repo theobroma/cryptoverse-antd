@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
+import { cryptoApi } from './crypto/cryptoApi';
 
 const logger = createLogger({
   collapsed: true,
@@ -7,7 +8,7 @@ const logger = createLogger({
 
 export const store = configureStore({
   reducer: {
-    // [cryptoApi.reducerPath]: cryptoApi.reducer,
+    [cryptoApi.reducerPath]: cryptoApi.reducer,
     // [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
