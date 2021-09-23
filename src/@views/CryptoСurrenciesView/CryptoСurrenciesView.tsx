@@ -4,21 +4,22 @@ import millify from 'millify';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../../@store/crypto/cryptoApi';
+import { ICurrency } from '../../@types';
 import styles from './CryptoСurrenciesView.module.css';
 
 const CryptoСurrenciesView: React.FC = () => {
   const count = 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
-  const [cryptos, setCryptos] = useState([]);
+  const [cryptos, setCryptos] = useState<ICurrency[]>([]);
 
   useEffect(() => {
     setCryptos(cryptosList?.data?.coins);
   }, [cryptosList]);
-  console.log(cryptos);
+
   return (
     <Content>
       <Row gutter={[32, 32]}>
-        {cryptos?.map((currency: any) => (
+        {cryptos?.map((currency: ICurrency) => (
           <Col xs={24} sm={12} md={8} lg={6} key={currency.id}>
             <Link key={currency.id} to={`/crypto/${currency.id}`}>
               <Card
@@ -32,7 +33,7 @@ const CryptoСurrenciesView: React.FC = () => {
                 }
                 hoverable
               >
-                <p>Price: {millify(currency.price)}</p>
+                <p>Price: {millify(Number(currency.price))}</p>
                 <p>Market Cap: {millify(currency.marketCap)}</p>
                 <p>Daily Change: {currency.change}%</p>
               </Card>
