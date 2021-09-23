@@ -32,30 +32,41 @@ export const APP_MAIN_ROUTES: IRoute[] = [
   },
 ];
 
-const App = () => (
-  <div className="app">
-    <Layout style={{ height: '100vh' }}>
-      <Sider width={300}>
-        <Navbar />
-      </Sider>
-      <Layout>
-        {/* <Header>Header</Header> */}
-        {/* ROUTES */}
-        <Suspense fallback={<LoadingPage />}>
-          <Switch>
-            <Redirect from="/index.html" to="/" exact />
-            {APP_MAIN_ROUTES.map((route: IRoute) => (
-              <Route key={route.path} {...route} />
-            ))}
-            {/* <Route component={Page404View} /> */}
-          </Switch>
-        </Suspense>
-        {/* / ROUTES */}
-        {/* <Content>Content</Content> */}
-        <Footer>Footer</Footer>
+const App = () => {
+  const sidebarWidth = 300;
+  return (
+    <div className="app">
+      <Layout style={{ height: '100vh' }}>
+        <Sider
+          width={sidebarWidth}
+          style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'fixed',
+            left: 0,
+          }}
+        >
+          <Navbar />
+        </Sider>
+        <Layout style={{ marginLeft: sidebarWidth }}>
+          {/* <Header>Header</Header> */}
+          {/* ROUTES */}
+          <Suspense fallback={<LoadingPage />}>
+            <Switch>
+              <Redirect from="/index.html" to="/" exact />
+              {APP_MAIN_ROUTES.map((route: IRoute) => (
+                <Route key={route.path} {...route} />
+              ))}
+              {/* <Route component={Page404View} /> */}
+            </Switch>
+          </Suspense>
+          {/* / ROUTES */}
+          {/* <Content>Content</Content> */}
+          <Footer>Footer</Footer>
+        </Layout>
       </Layout>
-    </Layout>
-  </div>
-);
+    </div>
+  );
+};
 
 export default App;
