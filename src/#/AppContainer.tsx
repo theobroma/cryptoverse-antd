@@ -6,6 +6,14 @@ import { IRoute, ROUTES } from '../@types';
 
 const MIN_LAZY_DELAY = 100;
 
+const HomeView = lazy(async () => {
+  const [moduleExports] = await Promise.all([
+    import(/* webpackChunkName: "HomeView" */ '../@views/HomeView'),
+    new Promise((resolve) => setTimeout(resolve, MIN_LAZY_DELAY)),
+  ]);
+  return moduleExports;
+});
+
 const CryptoСurrenciesView = lazy(async () => {
   const [moduleExports] = await Promise.all([
     import(
@@ -19,11 +27,11 @@ const CryptoСurrenciesView = lazy(async () => {
 const { Footer, Sider } = Layout;
 
 export const APP_MAIN_ROUTES: IRoute[] = [
-  // {
-  //   component: HomeView,
-  //   path: ROUTES.ROOT,
-  //   exact: true,
-  // },
+  {
+    component: HomeView,
+    path: ROUTES.ROOT,
+    exact: true,
+  },
   {
     component: CryptoСurrenciesView,
     path: ROUTES.CRYPTOCURRENCIES,
