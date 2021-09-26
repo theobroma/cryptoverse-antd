@@ -24,6 +24,14 @@ const CryptoСurrenciesView = lazy(async () => {
   return moduleExports;
 });
 
+const ExchangesView = lazy(async () => {
+  const [moduleExports] = await Promise.all([
+    import(/* webpackChunkName: "ExchangesView" */ '../@views/ExchangesView'),
+    new Promise((resolve) => setTimeout(resolve, MIN_LAZY_DELAY)),
+  ]);
+  return moduleExports;
+});
+
 const { Footer, Sider } = Layout;
 
 export const APP_MAIN_ROUTES: IRoute[] = [
@@ -35,6 +43,11 @@ export const APP_MAIN_ROUTES: IRoute[] = [
   {
     component: CryptoСurrenciesView,
     path: ROUTES.CRYPTOCURRENCIES,
+    exact: true,
+  },
+  {
+    component: ExchangesView,
+    path: ROUTES.EXCHANGES,
     exact: true,
   },
 ];
