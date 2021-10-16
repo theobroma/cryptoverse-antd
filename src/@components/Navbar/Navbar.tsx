@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
         <Menu.Item icon={<MoneyCollectOutlined />} key={ROUTES.EXCHANGES}>
           <Link to={ROUTES.EXCHANGES}>Exchanges</Link>
         </Menu.Item>
-        <Menu.Item icon={<BulbOutlined />} key={ROUTES.NEWS}>
+        {/* <Menu.Item icon={<BulbOutlined />} key={ROUTES.NEWS}>
           <Link to={ROUTES.NEWS}>News</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     </div>
   );
