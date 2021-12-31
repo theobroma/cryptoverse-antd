@@ -1,10 +1,10 @@
-import { Avatar, Col, Collapse, Row, Statistic, Typography } from 'antd';
+import { Avatar, Col, Collapse, Row, Typography } from 'antd';
 import HTMLReactParser from 'html-react-parser';
 import millify from 'millify';
 import React from 'react';
 import { useGetExchangesQuery } from '../../@store/crypto/cryptoApi';
 
-const { Title } = Typography;
+// const { Title } = Typography;
 const { Text } = Typography;
 const { Panel } = Collapse;
 

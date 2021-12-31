@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   HomeOutlined,
   MoneyCollectOutlined,
-  BulbOutlined,
+  // BulbOutlined,
   FundOutlined,
   //   MenuOutlined,
 } from '@ant-design/icons';

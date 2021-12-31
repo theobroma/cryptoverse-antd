@@ -1,36 +1,23 @@
-import React, { lazy, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
+import pMinDelay from 'p-min-delay';
+import React, { lazy, Suspense } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { LoadingPage, Navbar } from '../@components';
 import { IRoute, ROUTES } from '../@types';
 
 const MIN_LAZY_DELAY = 100;
 
-const HomeView = lazy(async () => {
-  const [moduleExports] = await Promise.all([
-    import(/* webpackChunkName: "HomeView" */ '../@views/HomeView'),
-    new Promise((resolve) => setTimeout(resolve, MIN_LAZY_DELAY)),
-  ]);
-  return moduleExports;
-});
+const HomeView = lazy(() =>
+  pMinDelay(import('../@views/HomeView'), MIN_LAZY_DELAY),
+);
 
-const CryptoСurrenciesView = lazy(async () => {
-  const [moduleExports] = await Promise.all([
-    import(
-      /* webpackChunkName: "CryptoСurrenciesView" */ '../@views/CryptoСurrenciesView'
-    ),
-    new Promise((resolve) => setTimeout(resolve, MIN_LAZY_DELAY)),
-  ]);
-  return moduleExports;
-});
+const CryptoСurrenciesView = lazy(() =>
+  pMinDelay(import('../@views/CryptoСurrenciesView'), MIN_LAZY_DELAY),
+);
 
-const ExchangesView = lazy(async () => {
-  const [moduleExports] = await Promise.all([
-    import(/* webpackChunkName: "ExchangesView" */ '../@views/ExchangesView'),
-    new Promise((resolve) => setTimeout(resolve, MIN_LAZY_DELAY)),
-  ]);
-  return moduleExports;
-});
+const ExchangesView = lazy(() =>
+  pMinDelay(import('../@views/ExchangesView'), MIN_LAZY_DELAY),
+);
 
 const { Footer, Sider } = Layout;
 

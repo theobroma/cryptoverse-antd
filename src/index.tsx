@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import AppContainer from './#/AppContainer';
+import AppContainer from './@routes/AppContainer';
 import reportWebVitals from './reportWebVitals';
 
 import 'antd/dist/antd.css';
