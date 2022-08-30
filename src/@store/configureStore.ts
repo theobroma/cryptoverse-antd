@@ -23,18 +23,6 @@ const rootReducer: Reducer<RootState> = (state, action) => {
   return combinedReducer(state, action);
 };
 
-// export const store = configureStore({
-//   reducer: {
-//     [cryptoApi.reducerPath]: cryptoApi.reducer,
-//     // [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-//   // devTools: process.env.NODE_ENV !== 'production',
-//   devTools: true,
-// });
-
-// export default { store };
-
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>

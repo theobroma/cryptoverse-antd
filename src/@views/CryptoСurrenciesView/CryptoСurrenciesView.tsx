@@ -7,7 +7,7 @@ import { ICurrency } from '../../@types';
 import { CryptoCard } from './CryptoCard';
 import { CryptoCardSkeleton } from './CryptoCardSkeleton';
 
-const CryptoСurrenciesView: React.FC = () => {
+const CryptoСurrenciesView = () => {
   const count = 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState<ICurrency[]>([]);
@@ -18,8 +18,8 @@ const CryptoСurrenciesView: React.FC = () => {
   }, [cryptosList]);
 
   const RealCardBlock = cryptos?.map((currency: ICurrency) => (
-    <Col xs={24} sm={12} md={8} lg={6} key={currency.id}>
-      <Link key={currency.id} to={`/crypto/${currency.id}`}>
+    <Col xs={24} sm={12} md={8} lg={6} key={currency.uuid}>
+      <Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
         <CryptoCard currency={currency} />
       </Link>
     </Col>

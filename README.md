@@ -1,5 +1,12 @@
 # Cryptoverse - Explore the World of Cryptocurrency
 
+##### React & AntD application
+
+Powered by Coinranking API:
+
+- [RapidAPI](https://rapidapi.com/Coinranking/api/coinranking1/)
+- [Original API](https://developers.coinranking.com/api)
+
 ## Usefull links
 
 ### Setup
