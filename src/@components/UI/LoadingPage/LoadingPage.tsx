@@ -2,7 +2,7 @@ import { Space, Spin } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React from 'react';
 
-export const LoadingPage: React.FC = () => {
+export const LoadingPage = () => {
   return (
     <Content
       style={{

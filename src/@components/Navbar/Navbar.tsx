@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import { ROUTES } from '../../@types';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const location = useLocation();
   return (
     <div>

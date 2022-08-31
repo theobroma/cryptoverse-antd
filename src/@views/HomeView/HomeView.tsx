@@ -5,7 +5,7 @@ import { useGetCryptosQuery } from '../../@store/crypto/cryptoApi';
 
 const { Title } = Typography;
 
-const HomeView: React.FC = () => {
+const HomeView = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
@@ -17,40 +17,40 @@ const HomeView: React.FC = () => {
       {!isFetching ? (
         <Row gutter={[32, 32]}>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total Cryptocurrencies"
               value={globalStats.total}
-            /> */}
+            />
           </Col>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total Exchanges"
               value={millify(globalStats.totalExchanges)}
-            /> */}
+            />
           </Col>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total Market Cap:"
               value={`$${millify(globalStats.totalMarketCap)}`}
-            /> */}
+            />
           </Col>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total 24h Volume"
               value={`$${millify(globalStats.total24hVolume)}`}
-            /> */}
+            />
           </Col>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total Cryptocurrencies"
               value={globalStats.total}
-            /> */}
+            />
           </Col>
           <Col span={12}>
-            {/* <Statistic
+            <Statistic
               title="Total Markets"
               value={millify(globalStats.totalMarkets)}
-            /> */}
+            />
           </Col>
         </Row>
       ) : null}

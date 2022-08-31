@@ -2,7 +2,7 @@ import { Card, Skeleton } from 'antd';
 import React from 'react';
 import styles from './CryptoСurrenciesView.module.css';
 
-export const CryptoCardSkeleton: React.FC = () => {
+export const CryptoCardSkeleton = () => {
   return (
     <Card
       className={styles.CryptoCardSkeleton}

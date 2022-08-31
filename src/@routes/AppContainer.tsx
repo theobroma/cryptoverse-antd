@@ -39,7 +39,7 @@ export const APP_MAIN_ROUTES: IRoute[] = [
   },
 ];
 
-const App: React.FC = () => {
+const App = () => {
   const sidebarWidth = 300;
   return (
     <div className="app">

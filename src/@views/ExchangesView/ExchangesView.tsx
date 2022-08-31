@@ -3,6 +3,25 @@
  * * This endpoint requires the pro plan or higher
  */
 
+import React from 'react';
+import { Alert, Typography } from 'antd';
+
+const ExchangesView = () => {
+  return (
+    <div>
+      <Typography.Title level={1} style={{ margin: 0 }}>
+        ExchangesView
+      </Typography.Title>
+      <Alert
+        message={<span>This endpoint requires the pro plan or higher</span>}
+        type="success"
+      />
+    </div>
+  );
+};
+
+export default ExchangesView;
+
 // import { Avatar, Col, Collapse, Row, Typography } from 'antd';
 // import HTMLReactParser from 'html-react-parser';
 // import millify from 'millify';
@@ -65,11 +84,3 @@
 //     </div>
 //   );
 // };
-
-import React from 'react';
-
-const ExchangesView = () => {
-  return <div>ExchangesView</div>;
-};
-
-export default ExchangesView;
