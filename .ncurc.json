@@ -1,0 +1,11 @@
+{
+  "reject": [
+    "@types/node",
+    "react",
+    "react-dom",
+    "@types/react",
+    "@types/react-dom",
+    "react-router-dom",
+    "@types/react-router-dom"
+  ]
+}
